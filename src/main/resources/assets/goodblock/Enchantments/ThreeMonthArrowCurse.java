@@ -7,7 +7,7 @@ import net.minecraft.world.item.enchant.EnchantmentCatagory;
 public class ThreeMonthArrow extends Enchantment {
        
   public ThreeMonthArrow() {
-    super(Enchantment.Rarity.Common, EnchantmentCatergory.Bow, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+    super(Enchantment.Rarity.VERY_RARE, EnchantmentCatergory.Bow, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
   }
 
