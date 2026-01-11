@@ -68,7 +68,7 @@ import net.hhdsj.goodblock.init.GoodblockModEntities;
 import net.hhdsj.goodblock.GoodblockMod;
 import net.hhdsj.goodblock.entity.*;
 import net.hhdsj.goodblock.registers.GoodblockEntities;
-
+import net.hhdsj.goodblock.init.GoodblockModAbilities;
 
 public class GoodblockModTransfurVariants {
     public static final DeferredRegister<TransfurVariant<?>> REGISTRY = ChangedRegistry.TRANSFUR_VARIANT.createDeferred("goodblock");
@@ -188,6 +188,7 @@ public class GoodblockModTransfurVariants {
 		.nightVision()
 		.addAbility(ChangedAbilities.TOGGLE_NIGHT_VISION)
 		.jumpStrength(2f)
+		.addAbility(entityType -> GoodblockModAbilities.CREATE_DRAGON_FRUIT.get())
 	    .build());
 
 	public static final RegistryObject<TransfurVariant<LatexyunxqhotdragonEntity>> LATEXYUNXQHOTDRAGON = REGISTRY.register("form_latex_yunxq_hot_dragon",
@@ -211,6 +212,18 @@ public class GoodblockModTransfurVariants {
 	    .nightVision()
 	    .addAbility(ChangedAbilities.TOGGLE_NIGHT_VISION)
 	    .build());
+
+	//火龙果狼>?
+	public static final RegistryObject<TransfurVariant<LatexDragonFruitWolfEntity>> LATEXDRAGONFRUITWOLF = REGISTRY.register("form_latex_dragon_fruit_wolf",
+	() -> TransfurVariant.Builder.of(GoodblockEntities.LATEXDRAGONFRUITWOLF)
+			.stepSize(0.7f)
+			.glide()
+			.addAbility(entityType -> GoodblockModAbilities.CREATE_DRAGON_FRUIT.get())
+			.transfurMode(TransfurMode.ABSORPTION)
+			.replicating()
+			.nightVision()
+			.addAbility(ChangedAbilities.TOGGLE_NIGHT_VISION)
+			.build());
 	    
 	public static void register(IEventBus bus) {
         REGISTRY.register(bus);
